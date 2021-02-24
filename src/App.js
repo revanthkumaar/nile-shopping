@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
       <HomePage />    {/* render homepage component here*/}
+      <h1>Testing the oswald font</h1>
     </div>
   );
 }

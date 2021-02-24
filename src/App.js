@@ -10,6 +10,8 @@ const HatsPage = () => (
     <h1>this is hats page</h1>
   </div>
 )
+
+
 //localhost:3000
 //RENDERING
 function App() {

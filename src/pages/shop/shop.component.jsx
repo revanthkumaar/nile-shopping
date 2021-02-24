@@ -1,14 +1,18 @@
 import React from 'react';
+import SHOP_DATA from './shop.data.js'
 
 //class component as we need to deal with data/state
-class shopPage extends React.Component{
+class ShopPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            collections: [
-    
-            ]
+            collections:SHOP_DATA
         }
     }
   
+    render(){
+        return <div>SHOP PAGE</div>
+    }
 }
+
+export default ShopPage;

@@ -4,19 +4,15 @@ import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 import {Route} from 'react-router-dom';
 import ShopPage from './pages/shop/shop.component'
-
-const HatsPage = () => (
-  <div>
-    <h1>this is hats page</h1>
-  </div>
-)
+import Header from './components/header/header.component'
 
 
-//localhost:3000
+
 //RENDERING
 function App() {
   return (
     <div>
+      <Header/>
       <Route exact path="/" component={HomePage}/>
       <Route exact path="/shop" component={ShopPage}/>
     </div>

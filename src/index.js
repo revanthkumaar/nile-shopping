@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 //as a part of redux integration - include provider
 import {Provider} from 'react-redux';
+//import the store
+import store from './redux/store'
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
    <App /> 
   </BrowserRouter>

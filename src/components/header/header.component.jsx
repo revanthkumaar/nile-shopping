@@ -5,6 +5,8 @@ import {ReactComponent as Logo} from '../../assets/crown.svg' //getting logo fil
 import CartIcon from '../cart-icon/cart-icon.component'
 import {connect} from 'react-redux';
 //functional component (as there is no data/state that is to be changed)
+import CartDropdown from '../cart-dropdown/cart-dropdown.component'
+
 
 const Header = ({currentUser}) => (
     <div className = "header" >
@@ -23,6 +25,7 @@ const Header = ({currentUser}) => (
             }
         <CartIcon/>
         </div>
+        <CartDropdown/>
     </div>
     
 )

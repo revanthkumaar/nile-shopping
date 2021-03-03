@@ -15,11 +15,33 @@ var config = {
 
 
 export const createUserProfileDocument = async(userAuth,additionalData) => {
+  console.log('userAuth in frebase.utils'+userAuth);
   if(!userAuth) return;
-
-  console.log(firestore.doc('users/GSVqgBMaqk4ZlHOIcqrC'))
-
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  console.log('snapshot status'+snapShot.exists)
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    console.log('after the response:  : : '+displayName);
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log('error creating user', error.message);
+    }
+  }
 }
+
+
+
+
+
+
 
   //initializeApp is a function to establish connection
 firebase.initializeApp(config);

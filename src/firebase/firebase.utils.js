@@ -2,8 +2,6 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-
-
 //get the config from firebase app on the cloud server
 var config = {
     apiKey: "AIzaSyBx4vN9Xw974R7oadCqpjZNHHI9UzqWoHA",
@@ -17,13 +15,12 @@ var config = {
 
   //initializeApp is a function to establish connection
 firebase.initializeApp(config);
-
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt:'select_account'});
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+//function that performs the signin
+export const signInWithGoogle= () => auth.signInWithPopup(provider);
 export default firebase;
 
 
